@@ -40,14 +40,6 @@ class App extends Component {
           <img src={(this.state.mainframeTrackingID) ? 
             `https://cookie-sync-mainframe.herokuapp.com/timed-prebid?mainframe-tracking-id=${this.state.mainframeTrackingID}` :
             'https://cookie-sync-mainframe.herokuapp.com/timed-prebid'} />
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
       </div>
     );
