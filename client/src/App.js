@@ -1,8 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { cookieParser } from './utils/cookies.js'
 import './App.css';
 
+const uuidv4 = require('uuid/v4')
+
 class App extends Component {
+  
+  state = { mainframeTrackingID: cookieParser.getItem('x-mainframe-tracking-id') }
+
+  componentDidMount() {
+    if (!cookieParser.getItem('x-mainframe-tracking-id')) {
+      console.log("no Clientside Cookie")
+      const uniqueID = uuidv4();
+      cookieParser.setItem('x-mainframe-tracking-id', uniqueID)
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -10,11 +23,11 @@ class App extends Component {
           <p>
             Serving Advertisment From Cookie-Sync Mainframe (GOTO Partner 1).
           </p>
-          <img src='https://cookie-sync-partner-1.herokuapp.com/adwork' alt="Ad Retarget" />
+          <img src={`https://cookie-sync-partner-1.herokuapp.com/adwork${(this.state.mainframeTrackingID) ? `?mainframe-tracking-id=${this.state.mainframeTrackingID}` : null}`} alt="Ad Retarget" />
           <p>
             Volume Bid
           </p>
-           {/* <img src='https://cookie-sync-mainframe.herokuapp.com/prebid' /> */ }
+           <img src='https://cookie-sync-mainframe.herokuapp.com/prebid' />
           <p>
             Timed Bid
           </p>
