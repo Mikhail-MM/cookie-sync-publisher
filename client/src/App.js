@@ -23,7 +23,7 @@ class App extends Component {
           <p>
             Serving Advertisment From Cookie-Sync Mainframe (GOTO Partner 1).
           </p>
-          <img src={`https://cookie-sync-partner-1.herokuapp.com/adwork${(this.state.mainframeTrackingID) ? `?mainframe-tracking-id=${this.state.mainframeTrackingID}` : null}`} alt="Ad Retarget" />
+          <img src={`https://cookie-sync-partner-1.herokuapp.com/adwork${(this.state.mainframeTrackingID) ? `?mainframe-tracking-id=${this.state.mainframeTrackingID}` : 'NO_ID'}`} alt="Ad Retarget" />
           <p>
             Volume Bid
           </p>
