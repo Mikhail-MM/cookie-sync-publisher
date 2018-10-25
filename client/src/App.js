@@ -25,17 +25,21 @@ class App extends Component {
           </p>
           <img src={(this.state.mainframeTrackingID) ? 
             `https://cookie-sync-partner-1.herokuapp.com/adwork?mainframe-tracking-id=${this.state.mainframeTrackingID}` :
-            `https://cookie-sync-partner-1.herokuapp.com/adwork`}
+            'https://cookie-sync-partner-1.herokuapp.com/adwork'}
             alt="Ad Retarget" 
           />
           <p>
             Volume Bid
           </p>
-           <img src='https://cookie-sync-mainframe.herokuapp.com/prebid' />
+           <img src={(this.state.mainframeTrackingID) ? 
+            `https://cookie-sync-mainframe.herokuapp.com/prebid?mainframe-tracking-id=${this.state.mainframeTrackingID}` :
+            'https://cookie-sync-mainframe.herokuapp.com/prebid'} />
           <p>
             Timed Bid
           </p>
-          { /* <img src='https://cookie-sync-mainframe.herokuapp.com/timed-prebid' /> */ }
+          <img src={(this.state.mainframeTrackingID) ? 
+            `https://cookie-sync-mainframe.herokuapp.com/timed-prebid?mainframe-tracking-id=${this.state.mainframeTrackingID}` :
+            'https://cookie-sync-mainframe.herokuapp.com/timed-prebid'} />
           <a
             className="App-link"
             href="https://reactjs.org"
