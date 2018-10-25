@@ -14,11 +14,11 @@ class App extends Component {
           <p>
             Volume Bid
           </p>
-          <img src='https://cookie-sync-mainframe.herokuapp.com/prebid' />
+           {/* <img src='https://cookie-sync-mainframe.herokuapp.com/prebid' /> */ }
           <p>
             Timed Bid
           </p>
-          <img src='https://cookie-sync-mainframe.herokuapp.com/timed-prebid' />
+          { /* <img src='https://cookie-sync-mainframe.herokuapp.com/timed-prebid' /> */ }
           <a
             className="App-link"
             href="https://reactjs.org"
